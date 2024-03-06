@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/gendev.hw1/src-gen" creationIcons="false" editDirectory="/gendev.hw1.edit/src-gen"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/gendev.hw1/src-gen" creationIcons="false" editDirectory="/gendev.hw1.edit/src-gen"
     editorDirectory="/gendev.hw1.editor/src-gen" modelPluginID="gendev.hw1" modelName="Hw1"
     rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
     importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
@@ -8,5 +9,90 @@
   <foreignModel>hw1.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
   <genPackages prefix="Hw1" basePackage="gendev" disposableProviderFactory="true"
-      ecorePackage="hw1.ecore#/"/>
+      ecorePackage="hw1.ecore#/">
+    <genClasses ecoreClass="hw1.ecore#//Patient">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Patient/medicalHistory"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hw1.ecore#//Patient/scheduledFor"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hw1.ecore#//Patient/issuedFor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Patient/patientId"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Patient/booked"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Patient/goingThrough"/>
+      <genOperations ecoreOperation="hw1.ecore#//Patient/viewMedicalHistory"/>
+      <genOperations ecoreOperation="hw1.ecore#//Patient/bookAppointment"/>
+      <genOperations ecoreOperation="hw1.ecore#//Patient/requestLabTest"/>
+      <genOperations ecoreOperation="hw1.ecore#//Patient/payBill">
+        <genParameters ecoreParameter="hw1.ecore#//Patient/payBill/amount"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false" ecoreClass="hw1.ecore#//Person">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Person/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Person/age"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Person/personId"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="hw1.ecore#//HospitalEmployee">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//HospitalEmployee/employeeId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//HospitalEmployee/salary"/>
+      <genOperations ecoreOperation="hw1.ecore#//HospitalEmployee/getEmployeeType"/>
+    </genClasses>
+    <genClasses ecoreClass="hw1.ecore#//Appointment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Appointment/appointmentId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Appointment/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Appointment/startTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Appointment/endTime"/>
+    </genClasses>
+    <genClasses ecoreClass="hw1.ecore#//Doctor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Doctor/specialization"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Doctor/performs"/>
+      <genOperations ecoreOperation="hw1.ecore#//Doctor/performOperation">
+        <genParameters ecoreParameter="hw1.ecore#//Doctor/performOperation/nurse"/>
+      </genOperations>
+      <genOperations ecoreOperation="hw1.ecore#//Doctor/prescribeMedicine">
+        <genParameters ecoreParameter="hw1.ecore#//Doctor/prescribeMedicine/patient"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="hw1.ecore#//Receptionist">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Receptionist/issues"/>
+      <genOperations ecoreOperation="hw1.ecore#//Receptionist/initiateBill">
+        <genParameters ecoreParameter="hw1.ecore#//Receptionist/initiateBill/service"/>
+      </genOperations>
+      <genOperations ecoreOperation="hw1.ecore#//Receptionist/allotBedToPatient">
+        <genParameters ecoreParameter="hw1.ecore#//Receptionist/allotBedToPatient/patient"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="hw1.ecore#//Nurse">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Nurse/conducts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Nurse/assistsIn"/>
+      <genOperations ecoreOperation="hw1.ecore#//Nurse/performLabTest">
+        <genParameters ecoreParameter="hw1.ecore#//Nurse/performLabTest/test"/>
+      </genOperations>
+      <genOperations ecoreOperation="hw1.ecore#//Nurse/assistDoctor">
+        <genParameters ecoreParameter="hw1.ecore#//Nurse/assistDoctor/operation"/>
+      </genOperations>
+    </genClasses>
+    <genClasses ecoreClass="hw1.ecore#//Billing">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Billing/billId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Billing/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Billing/amount"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference hw1.ecore#//Billing/issuedBy"/>
+      <genOperations ecoreOperation="hw1.ecore#//Billing/generateBill"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="hw1.ecore#//IMedicalService">
+      <genOperations ecoreOperation="hw1.ecore#//IMedicalService/calculateBill"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="hw1.ecore#//MedicalService">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//MedicalService/date"/>
+    </genClasses>
+    <genClasses ecoreClass="hw1.ecore#//Operation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//Operation/operationId"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Operation/performedBy"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//Operation/assistedBy"/>
+    </genClasses>
+    <genClasses ecoreClass="hw1.ecore#//LabTest">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute hw1.ecore#//LabTest/testId"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference hw1.ecore#//LabTest/conductedBy"/>
+      <genOperations ecoreOperation="hw1.ecore#//LabTest/conductLabTest">
+        <genParameters ecoreParameter="hw1.ecore#//LabTest/conductLabTest/nurse"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
 </genmodel:GenModel>

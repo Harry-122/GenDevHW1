@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hw1:Nurse xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:hw1="http://www.example.org/hw1"
+    age="23"
+    personId="4553"
+    employeeId="4345"
+    salary="23344.0">
+  <conducts
+      testId="545"/>
+</hw1:Nurse>

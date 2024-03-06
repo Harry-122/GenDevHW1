@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:hw1="http://www.example.org/hw1">
+  <hw1:Doctor name="Bhavya" age="50" personId="5454" employeeId="21212" salary="587455.0" specialization="Eye">
+    <performs date="2024-03-01T16:23:13.473+0000" operationId="4545">
+      <assistedBy name="Marta" age="22" personId="45454" employeeId="5454" salary="452454.0" assistsIn="/0/@performs.0"/>
+      <assistedBy name="Emma" age="26" personId="459844" employeeId="545564" salary="452454.0" assistsIn="/0/@performs.0"/>
+    </performs>
+  </hw1:Doctor>
+  <hw1:Doctor name="Bhavya" age="50" personId="5454" employeeId="21212" salary="587455.0" specialization="Eye">
+    <performs date="2024-03-01T16:23:13.478+0000" operationId="4545">
+      <assistedBy name="Marta" age="22" personId="45454" employeeId="5454" salary="452454.0"/>
+      <assistedBy name="Emma" age="26" personId="459844" employeeId="545564" salary="452454.0"/>
+      <assistedBy name="Martha" age="22" personId="45454" employeeId="5454" salary="452454.0" assistsIn="/1/@performs.0"/>
+      <assistedBy name="Emmah" age="26" personId="459844" employeeId="545564" salary="452454.0" assistsIn="/1/@performs.0"/>
+    </performs>
+  </hw1:Doctor>
+  <hw1:Patient name="Harry" age="38" patientId="654">
+    <issuedFor billId="4454" date="2024-03-01T16:23:13.481+0000" amount="544.0">
+      <issuedBy age="78" employeeId="4444" salary="44005.0"/>
+    </issuedFor>
+  </hw1:Patient>
+  <hw1:Patient name="Harry" age="38" patientId="654">
+    <issuedFor billId="4454" date="2024-03-01T16:23:13.481+0000" amount="544.0"/>
+  </hw1:Patient>
+  <hw1:Patient>
+    <scheduledFor appointmentId="7755" date="2024-03-01T16:23:13.482+0000" startTime="551515151555151"/>
+  </hw1:Patient>
+</xmi:XMI>

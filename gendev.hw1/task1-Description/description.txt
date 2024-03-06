@@ -1,0 +1,19 @@
+System Outline:
+The Hospital Management System involves four key stake-holders: patients, nurses, doctors, and receptionist, each playing integral roles in ensuring efficient health-care delivery. Upon arriving at the hospital, patients seek assistance from receptionist for various needs. Receptionist facilitate appointment scheduling, confirming slots chosen by patients who then await their scheduled appointments. Additionally, receptionist retrieve medical histories for returning patients and input new patient data into the hospital's database. As appointments conclude, receptionist generate bills for patient services.
+
+Nurses serve as vital support for doctors during medical procedures, offering assistance during operations and providing post-procedural care. Following tests, nurses facilitate lab test requests and deliver the corresponding reports to patients, contributing to the continuity of care.
+
+After appointment scheduling, patients undergo examinations conducted by doctors, who may order additional lab tests based on their assessment. Doctors' decisions and actions are pivotal in determining patient treatment paths, ensuring accurate diagnoses and effective medical interventions. This collaborative effort among stakeholders underscores the system's commitment to delivering comprehensive healthcare services.
+
+In essence, the interplay between patients, receptionist, nurses, and doctors within the Hospital Management System creates a seamless healthcare ecosystem, prioritizing patient well-being and fostering efficient medical care delivery.
+
+Explanation of Invariants:
+The provided OCL (Object Constraint Language) invariants specify certain rules and conditions that must be maintained within a system.
+ 
+The first invariant, inv1_AllBillsMustHaveReceptionist, ensures that all bills issued are associated with a receptionist. It mandates that for every bill, the entity issuing the bill must be of type Receptionist, and each bill should be issued by a single receptionist.
+
+The second invariant, inv2_DoctorMustBeAssistedByNurse, establishes a rule for operations performed by a doctor. It requires that all operations conducted by a doctor must have assistance from at least one nurse but no more than three. This ensures a balance in the number of nurses assisting a doctor during operations.
+
+The third invariant, inv3_LabTestAssociation, deals with the association between an entity and conducted lab tests. It states that if an entity conducts any lab tests, at least one of those tests must be associated with the conducting entity, and the test ID should be greater than zero. This guards against situations where tests are conducted without a proper association or with invalid test IDs.
+
+In summary, these three invariants define essential constraints to maintain integrity in a system, covering billing, doctor-nurse relationships during operations, and the association of lab tests with conducting entities.

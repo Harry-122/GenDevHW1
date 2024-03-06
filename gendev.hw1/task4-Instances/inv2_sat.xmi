@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hw1:Doctor
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:hw1="http://www.example.org/hw1"
+    name="Bhavya"
+    age="50"
+    personId="5441"
+    employeeId="45485"
+    salary="54453.0"
+    specialization="Eye Specialist">
+  <performs
+      operationId="5454">
+    <assistedBy
+        name="Rachel"
+        age="23"
+        personId="541"
+        employeeId="2155"
+        salary="545454.0"
+        assistsIn="//@performs.0"/>
+    <assistedBy
+        name="Monica"
+        age="23"
+        personId="5454"
+        employeeId="544"
+        salary="54545.0"
+        assistsIn="//@performs.0"/>
+  </performs>
+</hw1:Doctor>

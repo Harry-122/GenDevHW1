@@ -1,5 +1,12 @@
-Percentage of contribution:
-Member 1:  %
-Member 2:  %
+ Percentage of Contribution:
+Member 1: Bhavya Hiteshbhai Bhatt: 50%
+Member 2: Pritesh Tejendra Patel: 50%
 
-Explain contribution in words here.
+Explain Contribution in words here:
+Firstly, We understand the basic concepts of the project, That's the main thing, Because there are 4 tasks. The first thing we did was choose the system's business, it's stake-holders and everything else that needed to be run. We are creating the business of Hospital Management System. We're going to take it one step at a time, so we can finish the project. 
+
+Member 2 has started working on the task to draw up a usage diagram of particular business, he's been dealing with some issues in this connection and actors. He did start looking for it and came up with the final solution. After successfully creating a use case, he started working on an Activity Diagram and it was quite difficult compared to the use case as he had to keep some necessary points while creating the Activity diagram, He tried to achieve all points that were necessary in order to create this activity diagram. 
+
+After the successful creation of Use Case and Activity Diagram, Member 1 then started working on task 3 where we wanted to create the class diagrams and the OCL invariants. He faced some problems about creating the classes, with little bit of help of Member 2 we solve that problem. He was successful in creating a class diagram after resolving the issue. He started the implementation of OCL invariants after drawing up a class diagram. The creation of 3 invariants has gone smoothly so far.
+
+After completing task 3, Member 1 began working on Task 4 which involved writing Java code to generate an instance of the Ecore model that in turn would create object diagrams. In order to ensure a smooth operation, Member 1 has ensured that the code contains all the necessary rules that we have already laid down. In order to demonstrate how those rules would operate in practice, Member 1 has produced six examples. Overall, it's been a collaborative effort, and we're proud of what we've accomplished.
